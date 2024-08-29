@@ -50,10 +50,10 @@ class UrTube:
         user = User(nickname, password, age)
         if user not in self.users:
             self.users.append(user)
-        elif user in self.users:
-            print(f'Пользователь {nickname} уже существует') # for user in self.videos:
+            self.current_user = user
+        else:
+            print(f'Пользователь {nickname} уже существует')  # for user in self.videos:
             return
-        self.log_in(nickname, password)
 
     def log_in(self, nickname, password):
         for user in self.users:
@@ -81,7 +81,6 @@ class UrTube:
                         print(f'Конец видео')
                     else:
                         print(f'Вам нет 18 лет, пожалуйста покиньте страницу')
-                        self.log_out()
 
     def log_out(self):
         self.current_user = None
