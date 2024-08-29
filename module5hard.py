@@ -40,11 +40,11 @@ class UrTube:
                 self.videos.append(video)
 
     def get_videos(self, seek_video):
-        self.my_seek = []
+        my_seek = []
         for video in self.videos:
             if seek_video.lower() in video.title.lower():
-                self.my_seek.append(video.title)
-        return self.my_seek
+                my_seek.append(video.title)
+        return my_seek
 
     def register(self, nickname, password, age):
         user = User(nickname, password, age)
